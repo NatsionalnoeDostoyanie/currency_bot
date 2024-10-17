@@ -37,5 +37,5 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 # Run:
-python scr\main.py
+python scr/main.py
 ```
