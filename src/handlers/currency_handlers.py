@@ -141,7 +141,11 @@ async def get_to_currency(message: Message, state: FSMContext) -> None:
 
         total = amount * currency_rate
 
-        base_answer = MainTextMessages.TOTAL_WITH_ZERO_RATE if amount == 0 else MainTextMessages.TOTAL
+        base_answer = (
+            MainTextMessages.TOTAL_WITH_ZERO_RATE
+            if amount == 0 or from_currency == to_currency
+            else MainTextMessages.TOTAL
+        )
         await message.answer(
             base_answer.format(amount=amount, from_currency=from_currency, total=total, to_currency=to_currency)
         )
