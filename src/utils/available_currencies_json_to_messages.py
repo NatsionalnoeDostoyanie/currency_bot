@@ -17,7 +17,7 @@ l = base_logger(__name__)
 
 
 def available_currencies_json_to_messages(available_currencies_json: dict[str, str]) -> Union[tuple[str, ...], str]:
-    """
+    r"""
     Converts a JSON dictionary of available currencies into a series of formatted messages.
 
     This function takes a dictionary where the keys are currency codes
@@ -30,7 +30,7 @@ def available_currencies_json_to_messages(available_currencies_json: dict[str, s
 
     :param available_currencies_json: a JSON dictionary of available currencies `{"code": "name", ...}`.
 
-    :returns: a tuple of formatted messages `(..., "code1 - name1\\ncode2 - name2\\n", "code3 - name3\\n")`
+    :returns: a tuple of formatted messages `(..., "code1 - name1\ncode2 - name2\n", "code3 - name3\n")`
     or an error string.
     """
 
