@@ -45,10 +45,10 @@ def available_currencies_json_to_messages(available_currencies_json: dict[str, s
         if formatted_string_length > MAX_MESSAGE_LENGTH:
 
             l.warning(
-                f'Error: element "{repr(formatted_string)}" is longer than the maximum message length - "{MAX_MESSAGE_LENGTH}" characters'
+                f'Error: element {hex(id(formatted_string))} ("{repr(formatted_string)}") is longer than the maximum message length - "{MAX_MESSAGE_LENGTH}" characters'
             )
 
-            return f'Ошибка: элемент "{repr(formatted_string)}" длиннее максимальной длины сообщения - "{MAX_MESSAGE_LENGTH}" символов'
+            return f'Ошибка: элемент "{hex(id(formatted_string))}" длиннее максимальной длины сообщения - "{MAX_MESSAGE_LENGTH}" символов'
 
         # If the message length exceeds MAX_MESSAGE_LENGTH, start a new message
         if current_message_length >= MAX_MESSAGE_LENGTH:
